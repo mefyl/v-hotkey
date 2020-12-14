@@ -53,7 +53,7 @@ const getHotkeyCallback = (keyMap, keyCode, eventKeyModifiers) => {
  * @param {Array} keyMap
  * @param {Object} modifiers Vue event modifiers
  */
-export const assignKeyHandler = (e, keyMap, modifiers) => {
+export const assignKeyHandler = (el, e, keyMap, modifiers) => {
   const { keyCode, ctrlKey, altKey, shiftKey, metaKey } = e
   const eventKeyModifiers = { ctrlKey, altKey, shiftKey, metaKey }
 
