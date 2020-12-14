@@ -1,6 +1,3 @@
-
-const FORBIDDEN_NODES = ['INPUT', 'TEXTAREA', 'SELECT']
-
 /**
  *
  * @param {Object} a
@@ -64,10 +61,6 @@ export const assignKeyHandler = (el, e, keyMap, modifiers) => {
   if (modifiers.stop) {
     e.stopPropagation()
   }
-
-  const { nodeName, isContentEditable } = document.activeElement
-  if (isContentEditable) return
-  if (FORBIDDEN_NODES.includes(nodeName)) return
 
   const callback = getHotkeyCallback(keyMap, keyCode, eventKeyModifiers)
   if (!callback) return e
