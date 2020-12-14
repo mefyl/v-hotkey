@@ -64,6 +64,8 @@ export const assignKeyHandler = (el, e, keyMap, modifiers) => {
 
   const callback = getHotkeyCallback(keyMap, keyCode, eventKeyModifiers)
   if (!callback) return e
+
   e.preventDefault()
+  e.stopPropagation()
   callback[e.type](e)
 }
